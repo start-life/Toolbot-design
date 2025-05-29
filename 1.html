@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>התמונה שביקשת</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans Hebrew', 'David Libre', Tahoma, sans-serif;
+            background: #f8fafc;
+            padding: 10px;
+            direction: rtl;
+            text-align: right;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            direction: rtl;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans Hebrew', sans-serif;
+        }
+        
+        .content {
+            padding: 24px 20px;
+        }
+        
+        .message {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: right;
+        }
+        
+        .tip-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-right: 4px solid #0ea5e9;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .tip-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0c4a6e;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tip-text {
+            font-size: 13px;
+            color: #0f172a;
+            line-height: 1.4;
+            text-align: right;
+        }
+        
+        .status {
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid #d1fae5;
+        }
+        
+        .footer {
+            background: #f9fafb;
+            padding: 12px 20px;
+            font-size: 12px;
+            color: #6b7280;
+            text-align: center;
+            border-top: 1px solid #f3f4f6;
+        }
+        
+        @media (max-width: 500px) {
+            .container { margin: 5px; }
+            .content { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>📸 התמונה מוכנה!</h2>
+        </div>
+        
+        <div class="content">
+            <div class="message">
+                היי! הנה התמונה שביקשת במצורף למייל.
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-title">
+                    💡 טיפ לשיפור פרומפטים
+                </div>
+                <div class="tip-text">
+                    הוסף פרטים על תאורה, זווית צילום ורקע רצוי - ככל שהפרומפט מדויק יותר, כך התוצאה תהיה איכותית וקרובה יותר למה שאתה מחפש.
+                    <br><br>
+                    <strong>דוגמא:</strong> במקום "כלב" - כתוב "כלב גולדן רטריבר צעיר יושב בגינה ירוקה, תאורה טבעית רכה, זווית צילום נמוכה"
+                </div>
+            </div>
+            
+            <div class="status">
+                ✅ התמונה מצורפת ומוכנה לשימוש
+            </div>
+        </div>
+        
+        <div class="footer">
+            שאלות? פנה אלינו בחזרה
+        </div>
+    </div>
+</body>
+</html>

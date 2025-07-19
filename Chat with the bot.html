@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הבוט החכם שלנו</title>
+    <style>
+        /* Mobile First Responsive Design */
+        .container { 
+            width: 100%; 
+            max-width: 480px; 
+            background: #ffffff; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            overflow: hidden; 
+        }
+        
+        .mobile-padding { padding: 30px 25px; }
+        .mobile-text { font-size: 24px; }
+        .mobile-message { font-size: 16px; }
+        
+        @media only screen and (max-width: 480px) {
+            .mobile-padding { padding: 20px 15px !important; }
+            .mobile-text { font-size: 20px !important; }
+            .mobile-message { font-size: 14px !important; }
+            .chat-container { padding: 15px !important; }
+            .chat-message { max-width: 85% !important; font-size: 12px !important; }
+            .profile-container { margin: 0 8px !important; min-width: 50px !important; }
+            .profile-pic { width: 32px !important; height: 32px !important; }
+            .profile-name { font-size: 9px !important; }
+            .message-row { margin: 15px 0 !important; }
+        }
+        
+        .chat-interface {
+            background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .chat-message {
+            max-width: 75%;
+            margin: 8px 0;
+            padding: 14px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: white;
+            margin-left: auto;
+            margin-right: 0;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 3px 12px rgba(255, 107, 53, 0.3);
+        }
+        
+        .bot-message {
+            background: #ffffff;
+            color: #374151;
+            margin-right: auto;
+            margin-left: 0;
+            border-bottom-left-radius: 8px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        /* Email-safe profile styling using tables */
+        .profile-container {
+            vertical-align: top;
+            width: 60px;
+            text-align: center;
+        }
+        
+        .profile-pic {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid rgba(255,255,255,0.9);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 0 auto 4px auto;
+        }
+        
+        .profile-name {
+            font-size: 10px;
+            color: #64748b;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        
+        .user-profile {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .bot-profile {
+            background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+            color: white;
+            font-size: 18px;
+        }
+        
+        .message-container {
+            width: 100%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; direction: rtl; text-align: right; background-color: #ffffff;">
+    
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                
+                <!-- Container -->
+                <table class="container" cellpadding="0" cellspacing="0" border="0">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td class="mobile-padding" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); text-align: center;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 32px; font-weight: bold;">✓</span>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="mobile-padding" style="text-align: center; direction: rtl;">
+                            
+                            <!-- Greeting -->
+                            <h1 class="mobile-text" style="font-weight: 600; color: #2c3e50; margin: 0 0 8px 0; letter-spacing: -0.5px;">היי יוני כהן!</h1>
+                            
+                            <!-- Welcome Message -->
+                            <p class="mobile-message" style="color: #34495e; line-height: 1.5; margin: 0 0 25px 0;">
+                                <span style="background: linear-gradient(120deg, #FFE5B4 0%, #FFCC8F 100%); padding: 2px 8px; border-radius: 6px; font-weight: 500; color: #8B4513;">ממש כיף לדבר איתך!</span><br>
+                                הבוט החכם שלנו מוכן לעבודה
+                            </p>
+                            
+                            <!-- Chat Interface Demo -->
+                            <div class="chat-interface">
+                                <div style="color: #64748b; font-weight: 600; margin-bottom: 20px; text-align: center; font-size: 14px;">
+                                    💬 ממשק הצ'אט החדשני שלנו
+                                </div>
+                                
+                                <!-- User Message -->
+                                <table class="message-container" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+                                    <tr>
+                                        <td class="profile-container" style="width: 60px; vertical-align: top; text-align: center;">
+                                            <div class="profile-pic user-profile" style="width: 38px; height: 38px; background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; font-weight: bold; font-size: 14px; border-radius: 50%; text-align: center; vertical-align: middle; line-height: 34px; margin: 0 auto 4px auto;">👤</div>
+                                            <div class="profile-name" style="font-size: 10px; color: #64748b; font-weight: 500;">יוני כהן</div>
+                                        </td>
+                                        <td style="vertical-align: top;">
+                                            <div class="chat-message user-message" style="max-width: 300px; margin: 0; padding: 14px 18px; background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border-radius: 20px; border-bottom-right-radius: 8px; box-shadow: 0 3px 12px rgba(255, 107, 53, 0.3); font-size: 13px; line-height: 1.5;">
+                                                AI/ צור לי תמונה של חתול חמוד על רקע כחול
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Bot Message -->
+                                <table class="message-container" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+                                    <tr>
+                                        <td style="vertical-align: top;">
+                                            <div class="chat-message bot-message" style="max-width: 300px; margin: 0 0 0 auto; padding: 14px 18px; background: #ffffff; color: #374151; border-radius: 20px; border-bottom-left-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 13px; line-height: 1.5;">
+                                                מעולה! אני יוצר עבורך תמונה של חתול חמוד על רקע כחול. התמונה תישלח אליך במייל תוך דקות ספורות.
+                                            </div>
+                                        </td>
+                                        <td class="profile-container" style="width: 60px; vertical-align: top; text-align: center;">
+                                            <div class="profile-pic bot-profile" style="width: 38px; height: 38px; background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%); color: white; font-size: 18px; border-radius: 50%; text-align: center; vertical-align: middle; line-height: 34px; margin: 0 auto 4px auto;">🤖</div>
+                                            <div class="profile-name" style="font-size: 10px; color: #64748b; font-weight: 500;">AI Bot</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <!-- Tip Section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(120deg, #F3E8FF 0%, #E9D5FF 100%); border-radius: 10px; margin: 20px 0; border-right: 4px solid #8B5CF6;">
+                                <tr>
+                                    <td style="padding: 18px 20px; direction: rtl; text-align: right;">
+                                        <div style="font-size: 14px; font-weight: 600; color: #6B21A8; margin-bottom: 12px;">💡 טיפים ליצירת תמונות איכותיות</div>
+                                        
+                                        <div style="font-size: 12px; color: #6B21A8; line-height: 1.5; margin-bottom: 10px;">
+                                            <strong>1. השתמשו בפקודת AI/</strong><br>
+                                            התחילו כל בקשה עם AI/ כדי להפעיל את מחולל התמונות
+                                        </div>
+                                        
+                                        <div style="font-size: 12px; color: #6B21A8; line-height: 1.5; margin-bottom: 10px;">
+                                            <strong>2. תארו בפירוט</strong><br>
+                                            כתבו תיאור מפורט עם צבעים, רגשות ופרטים ספציפיים
+                                        </div>
+                                        
+                                        <div style="font-size: 12px; color: #6B21A8; line-height: 1.5; margin-bottom: 10px;">
+                                            <strong>3. זיכרון שיחה</strong><br>
+                                            הבוט זוכר את השיחה - תוכלו להמשיך ולשפר את התמונה
+                                        </div>
+                                        
+                                        <div style="font-size: 12px; color: #6B21A8; line-height: 1.5;">
+                                            <strong>4. תשובה נקייה למייל</strong><br>
+                                            כשעונים למייל, מחקו את שלשלת המיילים הקודמת לתוצאה טובה יותר
+                                        </div>
+                                        
+                                        <div style="margin-top: 12px; font-style: italic; background: rgba(255,255,255,0.5); padding: 8px 10px; border-radius: 6px; font-size: 11px;">
+                                            <strong>דוגמה:</strong> AI/ צור תמונה של גן פורח באביב, פרחים צבעוניים, שמש זורחת, ציפורים מצייצות, אווירה שמחה ורגועה
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Billing Section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #f8f9fa; border-radius: 8px; border-top: 3px solid #e9ecef; margin-top: 20px;">
+                                <tr>
+                                    <td style="padding: 15px 20px; text-align: center;">
+                                        <div style="font-size: 11px; color: #6c757d; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 500;">פרטי חיוב</div>
+                                        
+                                        <div style="margin-bottom: 8px;">
+                                            <div style="font-size: 12px; color: #495057; font-weight: 500; margin-bottom: 2px;">סך ההפעלות</div>
+                                            <div style="font-size: 12px; font-weight: 600; color: #FF6B35;">1</div>
+                                        </div>
+                                        
+                                        <div>
+                                            <div style="font-size: 12px; color: #495057; font-weight: 500; margin-bottom: 2px;">חיוב</div>
+                                            <div style="font-size: 12px; font-weight: 600; color: #FF6B35;">1 ₪</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

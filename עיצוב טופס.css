@@ -1,0 +1,144 @@
+:root {
+	/* גופן מודרני */
+	--font-family: 'Inter', 'Heebo', system-ui, -apple-system, sans-serif;
+	--font-weight-normal: 400;
+	--font-weight-bold: 600;
+	--font-size-body: 12px;
+	--font-size-label: 14px;
+	--font-size-test-notice: 12px;
+	--font-size-input: 14px;
+	--font-size-header: 20px;
+	--font-size-paragraph: 14px;
+	--font-size-link: 12px;
+	--font-size-error: 12px;
+	--font-size-html-h1: 28px;
+	--font-size-html-h2: 20px;
+	--font-size-html-h3: 16px;
+	--font-size-html-h4: 14px;
+	--font-size-html-h5: 12px;
+	--font-size-html-h6: 10px;
+	--font-size-subheader: 14px;
+	/* ערכת צבעים מודרנית - Dark Mode Inspired */
+	--color-background: #0f0f23;
+	--color-test-notice-text: #fbbf24;
+	--color-test-notice-bg: #1e1b2e;
+	--color-test-notice-border: #374151;
+	--color-card-bg: #1a1a2e;
+	--color-card-border: #374151;
+	--color-card-shadow: rgba(139, 92, 246, 0.15);
+	--color-link: #a78bfa;
+	--color-header: #f8fafc;
+	--color-label: #e2e8f0;
+	--color-input-border: #475569;
+	--color-input-text: #000000;
+	--color-focus-border: #8b5cf6;
+	--color-submit-btn-bg: linear-gradient(135deg, #8b5cf6, #06b6d4);
+	--color-submit-btn-text: #ffffff;
+	--color-error: #f87171;
+	--color-required: #f97316;
+	--color-clear-button-bg: #6366f1;
+	--color-html-text: #e2e8f0;
+	--color-html-link: #06b6d4;
+	--color-header-subtext: #94a3b8;
+	/* Border Radii - מודרני יותר */
+	--border-radius-card: 16px;
+	--border-radius-input: 12px;
+	--border-radius-clear-btn: 50%;
+	--card-border-radius: 16px;
+	/* Spacing */
+	--padding-container-top: 24px;
+	--padding-card: 24px;
+	--padding-test-notice-vertical: 12px;
+	--padding-test-notice-horizontal: 24px;
+	--margin-bottom-card: 16px;
+	--padding-form-input: 12px;
+	--card-padding: 24px;
+	--card-margin-bottom: 16px;
+	/* Dimensions */
+	--container-width: 448px;
+	--submit-btn-height: 48px;
+	--checkbox-size: 18px;
+	/* Others - אפקטים מודרניים */
+	--box-shadow-card: 0px 8px 32px 0px var(--color-card-shadow), 0px 0px 0px 1px rgba(139, 92, 246, 0.05);
+	--opacity-placeholder: 0.5;
+	--backdrop-blur: blur(20px);
+	--transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* אלטרנטיבה - ערכת צבעים בהירה ומודרנית */
+:root.light-theme {
+	--color-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	--color-test-notice-text: #d97706;
+	--color-test-notice-bg: rgba(255, 255, 255, 0.9);
+	--color-test-notice-border: rgba(255, 255, 255, 0.2);
+	--color-card-bg: rgba(255, 255, 255, 0.95);
+	--color-card-border: rgba(255, 255, 255, 0.2);
+	--color-card-shadow: rgba(0, 0, 0, 0.1);
+	--color-link: #6366f1;
+	--color-header: #1e293b;
+	--color-label: #334155;
+	--color-input-border: rgba(255, 255, 255, 0.3);
+	--color-input-text: #1f2937;
+	--color-focus-border: #8b5cf6;
+	--color-submit-btn-bg: linear-gradient(135deg, #667eea, #764ba2);
+	--color-submit-btn-text: #ffffff;
+	--color-error: #dc2626;
+	--color-required: #ea580c;
+	--color-clear-button-bg: #6366f1;
+	--color-html-text: #334155;
+	--color-html-link: #6366f1;
+	--color-header-subtext: #64748b;
+}
+
+/* תמיכה ב־RTL */
+form {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-family);
+  transition: var(--transition-smooth);
+}
+
+input, select, textarea {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-family);
+  transition: var(--transition-smooth);
+  backdrop-filter: var(--backdrop-blur);
+}
+
+/* אפקטים נוספים לעיצוב מודרני */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-background);
+  font-family: var(--font-family);
+  transition: var(--transition-smooth);
+}
+
+.card {
+  backdrop-filter: var(--backdrop-blur);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 12px 40px 0px var(--color-card-shadow);
+}
+
+input:focus, select:focus, textarea:focus {
+  transform: scale(1.02);
+  transition: var(--transition-smooth);
+}
+
+button {
+  background: var(--color-submit-btn-bg);
+  transition: var(--transition-smooth);
+  backdrop-filter: var(--backdrop-blur);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
